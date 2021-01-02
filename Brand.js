@@ -17,7 +17,7 @@ const Brand = (props) => {
       >
         <Text style={styles.subTitle}>BE INCLUDED</Text>
       </LinearGradient>
-      <TwoBtn navigation={props.navigation} />
+      {/* <TwoBtn navigation={props.navigation} /> */}
     </View>
   );
 };

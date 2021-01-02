@@ -10,6 +10,7 @@ import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 
 import Brand from './Brand';
+import SearchPost from './components/SearchPost';
 
 function HomeScreen({ navigation }) {
   return (
@@ -22,6 +23,10 @@ function HomeScreen({ navigation }) {
       <Button
         title='Go to Brand Name'
         onPress={() => navigation.navigate('Brand')}
+      />
+      <Button
+        title='Search or Post'
+        onPress={() => navigation.navigate('Search or Post')}
       />
     </View>
   );
@@ -61,6 +66,7 @@ function App() {
           <Stack.Screen name='Brand' component={Brand} />
           <Stack.Screen name='Home' component={HomeScreen} />
           <Stack.Screen name='Details' component={DetailsScreen} />
+          <Stack.Screen name='Search or Post' component={SearchPost} />
         </Stack.Navigator>
       </NavigationContainer>
     );
