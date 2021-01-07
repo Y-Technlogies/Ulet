@@ -11,6 +11,7 @@ import AppLoading from 'expo-app-loading';
 
 import Brand from './Brand';
 import SearchPost from './components/SearchPost';
+import WantTo from './components/WantTo';
 
 function HomeScreen({ navigation }) {
   return (
@@ -27,6 +28,10 @@ function HomeScreen({ navigation }) {
       <Button
         title='Search or Post'
         onPress={() => navigation.navigate('Search or Post')}
+      />
+      <Button
+        title='Search or Post'
+        onPress={() => navigation.navigate('I want to')}
       />
     </View>
   );
@@ -67,6 +72,7 @@ function App() {
           <Stack.Screen name='Home' component={HomeScreen} />
           <Stack.Screen name='Details' component={DetailsScreen} />
           <Stack.Screen name='Search or Post' component={SearchPost} />
+          <Stack.Screen name='I want to' component={WantTo} />
         </Stack.Navigator>
       </NavigationContainer>
     );
