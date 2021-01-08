@@ -32,7 +32,8 @@ const WantTo = (props) => {
 
       <Text
         style={{
-          border: '2px solid #1ed9a6',
+          borderWidth: 2,
+          borderColor: '#1ed9a6',
           marginBottom: 10,
           borderRadius: 5,
         }}
@@ -69,20 +70,20 @@ const styles = StyleSheet.create({
     fontFamily: 'Lato-Black',
     fontSize: 40,
     color: '#1ed9a6',
-    marginBottom: '50px',
+    marginBottom: 50,
   },
   btnStyle: {
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '98px',
+    width: 98,
     height: 35,
   },
   activeBtnStyle: {
     backgroundColor: '#1ed9a6',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '98px',
+    width: 98,
     height: 35,
   },
   btnText: {
@@ -99,11 +100,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Lato-Black',
     color: '#1ed9a6',
     fontWeight: 'bold',
-    marginTop: '50px',
+    marginTop: 50,
   },
   pickerStyle: {
     fontFamily: 'Lato-Black',
-    width: '200px',
+    width: 200,
     color: '#1ed9a6',
     borderRadius: 6,
     // border: '2px solid #1ed9a6',

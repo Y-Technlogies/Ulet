@@ -36,16 +36,17 @@ const styles = StyleSheet.create({
     fontFamily: 'Lato-Black',
     fontSize: 100,
     color: '#1ed9a6',
-    marginBottom: '50px',
+    marginBottom: 50,
   },
   btnStyle: {
     backgroundColor: 'white',
     borderRadius: 5,
-    border: '2px solid #1ed9a6',
+    borderWidth: 2,
+    borderColor: '#1ed9a6',
     alignItems: 'center',
     padding: 10,
-    width: '200px',
-    marginBottom: '10px',
+    width: 200,
+    marginBottom: 10,
   },
   btnText: {
     fontFamily: 'Lato-Black',
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Lato-Black',
     color: '#1ed9a6',
     fontWeight: 'bold',
-    marginTop: '50px',
+    marginTop: 50,
   },
 });
 
