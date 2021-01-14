@@ -1,12 +1,17 @@
 import React from 'react';
 import { Text, View, Button, StyleSheet } from 'react-native';
-import TwoBtn from './TwoBtn';
+import TwoBtn from '../TwoBtn';
 import { LinearGradient } from 'expo-linear-gradient';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Brand = (props) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={styles.titleText}>ULET</Text>
+
+      <TouchableOpacity onPress={() => props.navigation.navigate('Search or Post')}>
+        <Text style={styles.titleText}>ULET</Text>
+      </TouchableOpacity>
+      
 
       <LinearGradient
         // Button Linear Gradient

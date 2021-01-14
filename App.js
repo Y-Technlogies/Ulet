@@ -9,10 +9,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 
-import Brand from './Brand';
 import SearchPost from './components/SearchPost';
 import WantTo from './components/WantTo';
 import Login from './components/Login';
+import SignInUp from './components/SignInUp';
+import MyAccount from './components/MyAccount';
+import Brand from './components/Brand';
 
 function HomeScreen({ navigation }) {
   return (
@@ -73,13 +75,19 @@ function App() {
     return (
       // Routing - go one screen or page to another
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='Home'>
+        <Stack.Navigator initialRouteName='Brand'>
           <Stack.Screen name='Brand' component={Brand} />
           <Stack.Screen name='Home' component={HomeScreen} />
           <Stack.Screen name='Details' component={DetailsScreen} />
           <Stack.Screen name='Search or Post' component={SearchPost} />
           <Stack.Screen name='I want to' component={WantTo} />
           <Stack.Screen name='Login' component={Login} />
+          <Stack.Screen name='My Account' component={MyAccount} />
+          <Stack.Screen name='SignInUp' component={SignInUp}
+            options={{
+              headerTransparent: true,
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     );

@@ -1,25 +1,22 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Button, TouchableOpacity, StatusBar } from 'react-native';
 
 const onPress = () => {
   // My Action
 };
 
-const SearchPost = (props) => {
+const SignInUp = (props) => {
   return (
     <View style={styles.bodyStyle}>
+        <StatusBar backgroundColor="blue" />
       <Text style={styles.titleText}>ULET</Text>
 
-      <TouchableOpacity style={styles.btnStyle} onPress={() => props.navigation.navigate('SignInUp')}>
-        <Text style={styles.btnText}>SEARCH</Text>
+      <TouchableOpacity style={styles.btnStyle} onPress={() => props.navigation.navigate('Login')}>
+        <Text style={styles.btnText}>Sign Up</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.btnStyle} onPress={() => props.navigation.navigate('SignInUp')}>
-        <Text style={styles.btnText}>POST</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity>
-        <Text style={styles.bottomText}>BROWSE CATEGORIES</Text>
+      <TouchableOpacity style={styles.btnStyle} onPress={() => props.navigation.navigate('Login')}>
+        <Text style={styles.btnText}>Sign In</Text>
       </TouchableOpacity>
     </View>
   );
@@ -61,4 +58,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SearchPost;
+export default SignInUp;
