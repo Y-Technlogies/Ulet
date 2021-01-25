@@ -16,6 +16,7 @@ import SignInUp from "./components/SignInUp";
 import MyAccount from "./components/MyAccount";
 import Brand from "./components/Brand";
 import AboutMe from "./components/AboutMe";
+import MyPreference from "./components/MyPreference";
 
 function HomeScreen({ navigation }) {
   return (
@@ -46,6 +47,11 @@ function HomeScreen({ navigation }) {
       <Button
         title="My Account"
         onPress={() => navigation.navigate("My Account")}
+      />
+
+      <Button
+        title="My Preference"
+        onPress={() => navigation.navigate("My Preference")}
       />
 
       <Button title="Login" onPress={() => navigation.navigate("Login")} />
@@ -99,6 +105,7 @@ function App() {
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="My Account" component={MyAccount} />
           <Stack.Screen name="About Me" component={AboutMe} />
+          <Stack.Screen name="My Preference" component={MyPreference} />
           <Stack.Screen
             name="SignInUp"
             component={SignInUp}
