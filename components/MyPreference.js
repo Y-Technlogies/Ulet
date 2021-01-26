@@ -14,45 +14,55 @@ const onPress = () => {
 
 const MyPreference = (props) => {
   // Sample array of object - Features
-  const features = [
+  const [features, setFeatures] = useState([
     {
       name: "Furnished",
-      value: false,
+      is: false,
     },
     {
       name: "Wifi",
-      value: false,
+      is: false,
     },
     {
       name: "Hydro",
-      value: false,
-    },
-  ];
-
-  const [goodFor, setGoodFor] = useState([
-    {
-      name: "Male1",
-      value: false,
-    },
-    {
-      name: "Female",
-      value: false,
-    },
-    {
-      name: "LGBTQ",
-      value: false,
+      is: false,
     },
   ]);
 
-  const goodForSwitch = (value) => {
-    setGoodFor(!value);
+  const [goodFor, setGoodFor] = useState([
+    {
+      name: "Male",
+      is: false,
+    },
+    {
+      name: "Female",
+      is: false,
+    },
+    {
+      name: "LGBTQ",
+      is: false,
+    },
+  ]);
+
+  const goodForSwitch = (idx) => {
+    let words = [...goodFor];
+    words[idx].is = !words[idx].is;
+
+    setGoodFor(words);
   };
 
-  const [switchValue, setSwitchValue] = useState(false);
+  const featuresSwitch = (idx) => {
+    let words = [...features];
+    words[idx].is = !words[idx].is;
 
-  const toggleSwitch = (value, i) => {
-    setSwitchValue(!value);
+    setFeatures(words);
   };
+
+  // const [switchValue, setSwitchValue] = useState(false);
+
+  // const toggleSwitch = (value) => {
+  //   setSwitchValue(value);
+  // };
 
   return (
     <View style={styles.bodyStyle}>
@@ -91,28 +101,27 @@ const MyPreference = (props) => {
         <View style={styles.bodyRow}>
           <View style={{ width: "50%" }}>
             {goodFor.map((item, i) => (
-              <View style={{ paddingTop: 15, paddingBottom: 15 }}>
+              <View key={i} style={{ paddingTop: 15, paddingBottom: 15 }}>
                 <View style={styles.container}>
                   <Switch
                     style={{ marginTop: 0 }}
                     onValueChange={() => goodForSwitch(i)}
-                    value={item.value}
+                    value={item.is}
                   />
                   <Text>{item.name}</Text>
-                  <Text>{item.value}</Text>
                 </View>
               </View>
             ))}
           </View>
 
           <View style={{ width: "50%" }}>
-            {features.map((item) => (
-              <View style={{ paddingTop: 15, paddingBottom: 15 }}>
+            {features.map((item, i) => (
+              <View key={i} style={{ paddingTop: 15, paddingBottom: 15 }}>
                 <View style={styles.container}>
                   <Switch
                     style={{ marginTop: 0 }}
-                    onValueChange={toggleSwitch}
-                    value={switchValue}
+                    onValueChange={() => featuresSwitch(i)}
+                    value={item.is}
                   />
                   <Text>{item.name}</Text>
                 </View>
