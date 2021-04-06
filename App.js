@@ -12,12 +12,14 @@ import AppLoading from "expo-app-loading";
 import SearchPost from "./components/SearchPost";
 import WantTo from "./components/WantTo";
 import Login from "./components/Login";
+import SignUpScreen from "./components/SignUpScreen";
 import SignInUp from "./components/SignInUp";
 import MyAccount from "./components/MyAccount";
 import Brand from "./components/Brand";
 import AboutMe from "./components/AboutMe";
 import MyPreference from "./components/MyPreference";
 import MyListings from "./components/MyListings";
+import ShowCarousel from "./components/Carousel/ShowCarousel";
 
 function HomeScreen({ navigation }) {
   return (
@@ -60,7 +62,13 @@ function HomeScreen({ navigation }) {
         onPress={() => navigation.navigate("My Listings")}
       />
 
+      <Button
+        title="Show Carousel"
+        onPress={() => navigation.navigate("Show Carousel")}
+      />
+
       <Button title="Login" onPress={() => navigation.navigate("Login")} />
+      <Button title="Sign Up" onPress={() => navigation.navigate("SignUp")} />
     </View>
   );
 }
@@ -109,10 +117,12 @@ function App() {
           <Stack.Screen name="Search or Post" component={SearchPost} />
           <Stack.Screen name="I want to" component={WantTo} />
           <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="SignUp" component={SignUpScreen} />
           <Stack.Screen name="My Account" component={MyAccount} />
           <Stack.Screen name="About Me" component={AboutMe} />
           <Stack.Screen name="My Preference" component={MyPreference} />
           <Stack.Screen name="My Listings" component={MyListings} />
+          <Stack.Screen name="Show Carousel" component={ShowCarousel} />
           <Stack.Screen
             name="SignInUp"
             component={SignInUp}

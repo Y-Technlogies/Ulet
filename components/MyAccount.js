@@ -9,6 +9,7 @@ import {
   Image,
   ImageBackground,
 } from "react-native";
+import { Avatar, Accessory } from "react-native-elements";
 
 const onPress = () => {
   // My Action
@@ -21,10 +22,32 @@ const MyAccount = (props) => {
         source={require("../assets/images/logo.png")}
         style={styles.topBg}
       >
-        <Image
+        {/* <Image
           style={styles.profilePicStyle}
           source={require("../assets/images/tiny_logo.png")}
-        />
+        /> */}
+
+        <View style={{ paddingTop: 50 }}>
+          <Avatar
+            activeOpacity={0.2}
+            // avatarStyle={{}}
+            // containerStyle={{}}
+            // iconStyle={{}}
+            // imageProps={{}}
+            // onAccessoryPress={() => alert("onAccessoryPress")}
+            // onLongPress={() => alert("onLongPress")}
+            // overlayContainerStyle={{}}
+            // placeholderStyle={{}}
+            rounded
+            // showAccessory
+            size={120}
+            source={require("../assets/images/tiny_logo.png")}
+            title="P"
+            // titleStyle={{}}
+          >
+            <Avatar.Accessory size={20} onPress={() => alert("onPress")} />
+          </Avatar>
+        </View>
 
         <View style={{ paddingTop: 20 }}>
           <Text style={styles.toTextBg}>Upgrade to Ulet Premium</Text>
