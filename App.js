@@ -20,6 +20,7 @@ import AboutMe from "./components/AboutMe";
 import MyPreference from "./components/MyPreference";
 import MyListings from "./components/MyListings";
 import ShowCarousel from "./components/Carousel/ShowCarousel";
+import Listings from "./components/ListingsPages/Listings";
 
 function HomeScreen({ navigation }) {
   return (
@@ -60,6 +61,11 @@ function HomeScreen({ navigation }) {
       <Button
         title="My Listings"
         onPress={() => navigation.navigate("My Listings")}
+      />
+
+      <Button
+        title="Listings Result"
+        onPress={() => navigation.navigate("Listing Result")}
       />
 
       <Button
@@ -122,6 +128,7 @@ function App() {
           <Stack.Screen name="About Me" component={AboutMe} />
           <Stack.Screen name="My Preference" component={MyPreference} />
           <Stack.Screen name="My Listings" component={MyListings} />
+          <Stack.Screen name="Listing Result" component={Listings} />
           <Stack.Screen name="Show Carousel" component={ShowCarousel} />
           <Stack.Screen
             name="SignInUp"
