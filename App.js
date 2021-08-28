@@ -21,24 +21,52 @@ import MyPreference from "./components/MyPreference";
 import MyListings from "./components/MyListings";
 import ShowCarousel from "./components/Carousel/ShowCarousel";
 import Listings from "./components/ListingsPages/Listings";
+import { LinearGradient } from "expo-linear-gradient";
 
 function HomeScreen({ navigation }) {
+  const [firstLoad, setFirstLoad] = React.useState(true);
+  React.useEffect(() => {
+    setTimeout(() => {
+      setFirstLoad(false);
+    }, 3000);
+  }, []);
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate("Details")}
-      />
-      <Button
-        title="Go to Brand Name"
-        onPress={() => navigation.navigate("Brand")}
-      />
-      <Button
-        title="Search or Post"
-        onPress={() => navigation.navigate("Search or Post")}
-      />
-      <Button
+    <>
+      {firstLoad ? (
+        <View
+          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+        >
+          <Text style={styles.titleText}>ULET</Text>
+
+          <LinearGradient
+            // Button Linear Gradient
+            colors={["#1ed9a6", "#335799"]}
+            style={styles.subBg}
+            start={{ x: 0, y: 0.5 }}
+            end={{ x: 1, y: 0.9 }}
+          >
+            <Text style={styles.subTitle}>BE INCLUDED</Text>
+          </LinearGradient>
+          {/* <TwoBtn navigation={props.navigation} /> */}
+        </View>
+      ) : (
+        <View
+          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+        >
+          <Text>Home Screen</Text>
+          <Button
+            title="Go to Details"
+            onPress={() => navigation.navigate("Details")}
+          />
+          <Button
+            title="Go to Brand Name"
+            onPress={() => navigation.navigate("Brand")}
+          />
+          <Button
+            title="Search or Post"
+            onPress={() => navigation.navigate("Search or Post")}
+          />
+          {/* <Button
         title="I want to"
         onPress={() => navigation.navigate("I want to")}
       />
@@ -46,36 +74,41 @@ function HomeScreen({ navigation }) {
       <Button
         title="About Me"
         onPress={() => navigation.navigate("About Me")}
-      />
+      /> */}
 
-      <Button
-        title="My Account"
-        onPress={() => navigation.navigate("My Account")}
-      />
+          <Button
+            title="My Account"
+            onPress={() => navigation.navigate("My Account")}
+          />
 
-      <Button
-        title="My Preference"
-        onPress={() => navigation.navigate("My Preference")}
-      />
+          <Button
+            title="My Preference"
+            onPress={() => navigation.navigate("My Preference")}
+          />
 
-      <Button
-        title="My Listings"
-        onPress={() => navigation.navigate("My Listings")}
-      />
+          <Button
+            title="My Listings"
+            onPress={() => navigation.navigate("My Listings")}
+          />
 
-      <Button
-        title="Listings Result"
-        onPress={() => navigation.navigate("Listing Result")}
-      />
+          <Button
+            title="Listings Result"
+            onPress={() => navigation.navigate("Listing Result")}
+          />
 
-      <Button
-        title="Show Carousel"
-        onPress={() => navigation.navigate("Show Carousel")}
-      />
+          <Button
+            title="Show Carousel"
+            onPress={() => navigation.navigate("Show Carousel")}
+          />
 
-      <Button title="Login" onPress={() => navigation.navigate("Login")} />
-      <Button title="Sign Up" onPress={() => navigation.navigate("SignUp")} />
-    </View>
+          <Button title="Login" onPress={() => navigation.navigate("Login")} />
+          <Button
+            title="Sign Up"
+            onPress={() => navigation.navigate("SignUp")}
+          />
+        </View>
+      )}
+    </>
   );
 }
 
@@ -121,11 +154,11 @@ function App() {
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Details" component={DetailsScreen} />
           <Stack.Screen name="Search or Post" component={SearchPost} />
-          <Stack.Screen name="I want to" component={WantTo} />
+          {/* <Stack.Screen name="I want to" component={WantTo} /> */}
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="SignUp" component={SignUpScreen} />
           <Stack.Screen name="My Account" component={MyAccount} />
-          <Stack.Screen name="About Me" component={AboutMe} />
+          {/* <Stack.Screen name="About Me" component={AboutMe} /> */}
           <Stack.Screen name="My Preference" component={MyPreference} />
           <Stack.Screen name="My Listings" component={MyListings} />
           <Stack.Screen name="Listing Result" component={Listings} />
@@ -150,6 +183,20 @@ const styles = StyleSheet.create({
     fontSize: 100,
     // fontWeight: 'bold',
     color: "#1ed9a6",
+  },
+  titleText: {
+    fontFamily: "Lato-Black",
+    fontSize: 100,
+    // fontWeight: 'bold',
+    color: "#1ed9a6",
+  },
+  subBg: {
+    borderRadius: 10,
+  },
+  subTitle: {
+    paddingRight: 76,
+    paddingLeft: 76,
+    color: "white",
   },
 });
 
