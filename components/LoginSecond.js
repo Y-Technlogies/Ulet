@@ -20,7 +20,7 @@ import { useTheme } from "react-native-paper";
 
 // import Users from '../model/users';
 
-const Login = ({ navigation }) => {
+const LoginSecond = ({ navigation }) => {
   const [data, setData] = React.useState({
     username: "",
     password: "",
@@ -116,7 +116,7 @@ const Login = ({ navigation }) => {
     <View style={styles.container}>
       <StatusBar backgroundColor="#1ed9a6" barStyle="light-content" />
       <View style={styles.header}>
-        <Text style={styles.text_header}>Welcome!</Text>
+        {/* <Text style={styles.text_header}>Welcome!</Text> */}
       </View>
       <Animatable.View
         animation="fadeInUpBig"
@@ -248,7 +248,7 @@ const Login = ({ navigation }) => {
               styles.signIn,
               {
                 borderColor: "#1ed9a6",
-                borderWidth: 2,
+                // borderWidth: 2,
                 marginTop: 15,
               },
             ]}
@@ -261,7 +261,7 @@ const Login = ({ navigation }) => {
                 },
               ]}
             >
-              Sign Up
+              Forgot Password
             </Text>
           </TouchableOpacity>
         </View>
@@ -270,7 +270,7 @@ const Login = ({ navigation }) => {
   );
 };
 
-export default Login;
+export default LoginSecond;
 
 const styles = StyleSheet.create({
   container: {
@@ -281,10 +281,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     paddingHorizontal: 20,
-    paddingBottom: 50,
+    paddingBottom: 10,
   },
   footer: {
-    flex: 3,
+    flex: 5,
     backgroundColor: "#fff",
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,

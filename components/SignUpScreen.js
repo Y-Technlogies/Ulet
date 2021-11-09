@@ -74,12 +74,12 @@ const SignUpScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#009387" barStyle="light-content" />
-      {/* <View style={styles.header}>
-        <Text style={styles.text_header}>Register Now!</Text>
-      </View> */}
+      <View style={styles.header}>
+        {/* <Text style={styles.text_header}>Register Now!</Text> */}
+      </View>
       <Animatable.View animation="fadeInUpBig" style={styles.footer}>
         <ScrollView>
-          <Text style={styles.text_footer}>User Name</Text>
+          <Text style={styles.text_footer}>Name</Text>
           <View style={styles.action}>
             <FontAwesome name="user-o" color="#05375a" size={20} />
             <TextInput
@@ -149,7 +149,7 @@ const SignUpScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
 
-          <Text
+          {/* <Text
             style={[
               styles.text_footer,
               {
@@ -175,8 +175,8 @@ const SignUpScreen = ({ navigation }) => {
                 <Feather name="eye" color="grey" size={20} />
               )}
             </TouchableOpacity>
-          </View>
-          <View style={styles.textPrivate}>
+          </View> */}
+          {/* <View style={styles.textPrivate}>
             <Text style={styles.color_textPrivate}>
               By signing up you agree to our
             </Text>
@@ -189,7 +189,7 @@ const SignUpScreen = ({ navigation }) => {
               {" "}
               Privacy policy
             </Text>
-          </View>
+          </View> */}
           <View style={styles.button}>
             <TouchableOpacity style={styles.signIn} onPress={() => {}}>
               <LinearGradient
@@ -208,29 +208,6 @@ const SignUpScreen = ({ navigation }) => {
                 </Text>
               </LinearGradient>
             </TouchableOpacity>
-
-            <TouchableOpacity
-              onPress={() => navigation.goBack()}
-              style={[
-                styles.signIn,
-                {
-                  borderColor: "#009387",
-                  borderWidth: 1,
-                  marginTop: 15,
-                },
-              ]}
-            >
-              <Text
-                style={[
-                  styles.textSign,
-                  {
-                    color: "#009387",
-                  },
-                ]}
-              >
-                Sign In
-              </Text>
-            </TouchableOpacity>
           </View>
         </ScrollView>
       </Animatable.View>
@@ -243,13 +220,13 @@ export default SignUpScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#009387",
+    backgroundColor: "#1ed9a6",
   },
   header: {
     flex: 1,
     justifyContent: "flex-end",
     paddingHorizontal: 20,
-    paddingBottom: 50,
+    paddingBottom: 10,
   },
   footer: {
     flex: Platform.OS === "ios" ? 3 : 5,

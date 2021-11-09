@@ -12,6 +12,7 @@ import AppLoading from "expo-app-loading";
 import SearchPost from "./components/SearchPost";
 import WantTo from "./components/WantTo";
 import Login from "./components/Login";
+import LoginSecond from "./components/LoginSecond";
 import SignUpScreen from "./components/SignUpScreen";
 import SignInUp from "./components/SignInUp";
 import MyAccount from "./components/MyAccount";
@@ -53,15 +54,14 @@ function HomeScreen({ navigation }) {
         <View
           style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
         >
-          <Text>Home Screen</Text>
-          <Button
+          {/* <Button
             title="Go to Details"
             onPress={() => navigation.navigate("Details")}
-          />
-          <Button
+          /> */}
+          {/* <Button
             title="Go to Brand Name"
             onPress={() => navigation.navigate("Brand")}
-          />
+          /> */}
           <Button
             title="Search or Post"
             onPress={() => navigation.navigate("Search or Post")}
@@ -103,6 +103,10 @@ function HomeScreen({ navigation }) {
 
           <Button title="Login" onPress={() => navigation.navigate("Login")} />
           <Button
+            title="Login 2"
+            onPress={() => navigation.navigate("Login 2")}
+          />
+          <Button
             title="Sign Up"
             onPress={() => navigation.navigate("SignUp")}
           />
@@ -112,20 +116,20 @@ function HomeScreen({ navigation }) {
   );
 }
 
-function DetailsScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Details Screen 1</Text>
-      <Button
-        title="Go to Details... again"
-        onPress={() => navigation.push("Details")}
-      />
+// function DetailsScreen({ navigation }) {
+//   return (
+//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+//       <Text>Details Screen 1</Text>
+//       <Button
+//         title="Go to Details... again"
+//         onPress={() => navigation.push("Details")}
+//       />
 
-      <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />
-      <Button title="Go back" onPress={() => navigation.goBack()} />
-    </View>
-  );
-}
+//       <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />
+//       <Button title="Go back" onPress={() => navigation.goBack()} />
+//     </View>
+//   );
+// }
 
 const Stack = createStackNavigator();
 
@@ -144,18 +148,20 @@ function App() {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
-            cardStyle: {
-              backgroundColor: "white",
-            },
+            // cardStyle: {
+            //   backgroundColor: "white",
+            // },
+            headerShown: false,
           }}
           initialRouteName="Home"
         >
           <Stack.Screen name="Brand" component={Brand} />
           <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Details" component={DetailsScreen} />
+          {/* <Stack.Screen name="Details" component={DetailsScreen} /> */}
           <Stack.Screen name="Search or Post" component={SearchPost} />
           {/* <Stack.Screen name="I want to" component={WantTo} /> */}
           <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Login 2" component={LoginSecond} />
           <Stack.Screen name="SignUp" component={SignUpScreen} />
           <Stack.Screen name="My Account" component={MyAccount} />
           {/* <Stack.Screen name="About Me" component={AboutMe} /> */}

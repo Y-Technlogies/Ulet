@@ -5,8 +5,11 @@ import {
   StyleSheet,
   ImageBackground,
   ScrollView,
+  StatusBar,
 } from "react-native";
 import ListingCard from "./ListingCard";
+import MenuItems from "./MenuItems";
+import SearchBar from "./SearchBar";
 
 const onPress = () => {
   // My Action
@@ -37,12 +40,39 @@ const listingInfos = [
     address: "Your address here",
     car: "2",
   },
+  {
+    name: "Jhon Moris",
+    bgImg: "../../assets/images/preference.jpg",
+    pImg: "../../assets/images/tiny_logo.png",
+    price: "$1300/months",
+    address: "Your address here",
+    car: "2",
+  },
+  {
+    name: "Jhon Moris",
+    bgImg: "../../assets/images/preference.jpg",
+    pImg: "../../assets/images/tiny_logo.png",
+    price: "$1300/months",
+    address: "Your address here",
+    car: "2",
+  },
 ];
 
+const Separator = () => <View style={styles.separator} />;
+
 const Listings = (props) => {
+  const handleCity = () => {
+    //
+  };
+
   return (
     <View style={styles.bodyStyle}>
-      <ScrollView>
+      <View>
+        <SearchBar handleCity={handleCity} />
+        <MenuItems />
+        <Separator />
+      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
         {listingInfos.map((item, i) => (
           <ListingCard item={item} key={i} />
         ))}
@@ -56,6 +86,7 @@ const styles = StyleSheet.create({
   bodyStyle: {
     padding: 10,
     backgroundColor: "#f8f9f9",
+    marginTop: StatusBar.currentHeight,
   },
   toTextBg: {
     backgroundColor: "#1ED9A6",
@@ -100,6 +131,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     flexDirection: "row",
+  },
+  separator: {
+    marginVertical: 8,
+    borderBottomColor: "#eee",
+    borderBottomWidth: 1, //StyleSheet.hairlineWidth,
   },
 });
 
