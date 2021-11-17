@@ -23,6 +23,7 @@ import MyListings from "./components/MyListings";
 import ShowCarousel from "./components/Carousel/ShowCarousel";
 import Listings from "./components/ListingsPages/Listings";
 import { LinearGradient } from "expo-linear-gradient";
+import DetailsPage from "./components/DetailsPage/DetailsPage";
 
 function HomeScreen({ navigation }) {
   const [firstLoad, setFirstLoad] = React.useState(true);
@@ -101,6 +102,11 @@ function HomeScreen({ navigation }) {
             onPress={() => navigation.navigate("Show Carousel")}
           />
 
+          {/* <Button
+            title="Show Detail"
+            onPress={() => navigation.navigate("Show Detail")}
+          /> */}
+
           <Button title="Login" onPress={() => navigation.navigate("Login")} />
           <Button
             title="Login 2"
@@ -169,6 +175,7 @@ function App() {
           <Stack.Screen name="My Listings" component={MyListings} />
           <Stack.Screen name="Listing Result" component={Listings} />
           <Stack.Screen name="Show Carousel" component={ShowCarousel} />
+          <Stack.Screen name="Show Detail" component={DetailsPage} />
           <Stack.Screen
             name="SignInUp"
             component={SignInUp}

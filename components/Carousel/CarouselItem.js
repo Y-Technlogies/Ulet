@@ -3,13 +3,15 @@ import { View, StyleSheet, Text, Image, Dimensions } from "react-native";
 
 const { width, height } = Dimensions.get("window");
 
-const CarouselItem = ({ item }) => {
+const CarouselItem = ({ item, index, total }) => {
   return (
     <View style={styles.cardView}>
       <Image style={styles.image} source={{ uri: item.url }} />
       <View style={styles.textView}>
-        <Text style={styles.itemTitle}> {item.title}</Text>
-        <Text style={styles.itemDescription}>{item.description}</Text>
+        {/* <Text style={styles.itemTitle}> {item.title}</Text> */}
+        <Text style={styles.itemDescription}>
+          {index + 1}/{total}
+        </Text>
       </View>
     </View>
   );
@@ -18,10 +20,11 @@ const CarouselItem = ({ item }) => {
 const styles = StyleSheet.create({
   cardView: {
     flex: 1,
-    width: width - 20,
+    // width: width - 20,
+    width: width,
     height: height / 3,
     backgroundColor: "white",
-    margin: 10,
+    // margin: 10,
     borderRadius: 10,
     shadowColor: "#000",
     shadowOffset: { width: 0.5, height: 0.5 },
@@ -34,12 +37,18 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 10,
     margin: 10,
-    left: 5,
+    right: 5,
+    borderColor: "white",
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    backgroundColor: "#17202A90",
   },
   image: {
-    width: width - 20,
+    width: width,
     height: height / 3,
-    borderRadius: 10,
+    // borderRadius: 10,
   },
   itemTitle: {
     color: "white",

@@ -8,6 +8,7 @@ import {
 } from "react-native";
 
 import { Avatar } from "react-native-elements";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const onPress = () => {
   // My Action
@@ -22,38 +23,42 @@ const boxItems = [
 const ListingCard = (props) => {
   return (
     <View style={styles.container}>
-      <ImageBackground
-        source={require("../../assets/images/preference.jpg")}
-        style={styles.topBg}
-        imageStyle={{ borderTopLeftRadius: 5, borderTopRightRadius: 5 }}
+      <TouchableOpacity
+        onPress={() => props.navigation.navigate("Show Detail")}
       >
-        <View
-          style={{
-            paddingTop: 130,
-            paddingLeft: 17,
-            paddingRight: 17,
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "space-between",
-          }}
+        <ImageBackground
+          source={require("../../assets/images/preference.jpg")}
+          style={styles.topBg}
+          imageStyle={{ borderTopLeftRadius: 5, borderTopRightRadius: 5 }}
         >
-          <View>
-            <Text style={styles.toTextBg}>Listing Card</Text>
-          </View>
-          <Avatar
-            activeOpacity={0.2}
-            rounded
-            size={60}
-            source={require("../../assets/images/tiny_logo.png")}
-            title="P"
-            avatarStyle={{
-              borderWidth: 2,
-              borderColor: "white",
-              borderStyle: "solid",
+          <View
+            style={{
+              paddingTop: 130,
+              paddingLeft: 17,
+              paddingRight: 17,
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between",
             }}
-          ></Avatar>
-        </View>
-      </ImageBackground>
+          >
+            <View>
+              <Text style={styles.toTextBg}>Listing Card</Text>
+            </View>
+            <Avatar
+              activeOpacity={0.2}
+              rounded
+              size={60}
+              source={require("../../assets/images/tiny_logo.png")}
+              title="P"
+              avatarStyle={{
+                borderWidth: 2,
+                borderColor: "white",
+                borderStyle: "solid",
+              }}
+            ></Avatar>
+          </View>
+        </ImageBackground>
+      </TouchableOpacity>
 
       <View
         style={{

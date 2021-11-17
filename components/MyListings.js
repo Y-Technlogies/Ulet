@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   StatusBar,
   Image,
-  ImageBackground,
   ScrollView,
 } from "react-native";
 
@@ -82,6 +81,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     // alignItems: "center",
+    marginTop: StatusBar.currentHeight,
   },
 
   topBg: {

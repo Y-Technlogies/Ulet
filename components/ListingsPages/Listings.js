@@ -60,7 +60,7 @@ const listingInfos = [
 
 const Separator = () => <View style={styles.separator} />;
 
-const Listings = (props) => {
+const Listings = ({ navigation }) => {
   const handleCity = () => {
     //
   };
@@ -74,7 +74,7 @@ const Listings = (props) => {
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         {listingInfos.map((item, i) => (
-          <ListingCard item={item} key={i} />
+          <ListingCard item={item} key={i} navigation={navigation} />
         ))}
       </ScrollView>
     </View>
