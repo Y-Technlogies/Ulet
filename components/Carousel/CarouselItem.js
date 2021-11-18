@@ -1,12 +1,19 @@
 import React from "react";
 import { View, StyleSheet, Text, Image, Dimensions } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const { width, height } = Dimensions.get("window");
 
-const CarouselItem = ({ item, index, total }) => {
+const CarouselItem = ({ item, index, total, navigation }) => {
   return (
     <View style={styles.cardView}>
-      <Image style={styles.image} source={{ uri: item.url }} />
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("Show zoom Image", { imgUrl: item.url })
+        }
+      >
+        <Image style={styles.image} source={{ uri: item.url }} />
+      </TouchableOpacity>
       <View style={styles.textView}>
         {/* <Text style={styles.itemTitle}> {item.title}</Text> */}
         <Text style={styles.itemDescription}>

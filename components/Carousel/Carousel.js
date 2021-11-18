@@ -31,7 +31,7 @@ function infiniteScroll(dataList) {
   }, 3000);
 }
 
-const Carousel = ({ data }) => {
+const Carousel = ({ data, navigation }) => {
   const scrollX = new Animated.Value(0);
   let position = Animated.divide(scrollX, width);
   const [dataList, setDataList] = useState(data);
@@ -63,7 +63,12 @@ const Carousel = ({ data }) => {
           showsHorizontalScrollIndicator={false}
           renderItem={({ item, index }) => {
             return (
-              <CarouselItem item={item} index={index} total={data.length} />
+              <CarouselItem
+                item={item}
+                index={index}
+                total={data.length}
+                navigation={navigation}
+              />
             );
           }}
           onScroll={Animated.event([

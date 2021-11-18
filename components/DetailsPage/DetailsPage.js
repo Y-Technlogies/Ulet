@@ -5,12 +5,12 @@ import Carousel from "../Carousel/Carousel";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { Avatar } from "react-native-elements";
 
-export default function DetailsPage() {
+export default function DetailsPage(props) {
   return (
     <View>
       <ScrollView vertical={true} showsVerticalScrollIndicator={false}>
         <View>
-          <Carousel data={dummyData} />
+          <Carousel data={dummyData} navigation={props.navigation} />
           <View style={styles.titleBox}>
             <Text style={styles.titleStyle}>
               Vintage Mercury Glass Ornaments (Lot of 12)
