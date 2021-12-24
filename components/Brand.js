@@ -6,15 +6,11 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Brand = (props) => {
   const [bName, setBName] = React.useState("ULET");
-  React.useEffect(() => {
-    setTimeout(() => {
-      props.navigation.navigate("Search or Post");
-    }, 8000);
-  }, []);
+
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <TouchableOpacity
-        onPress={() => props.navigation.navigate("Search or Post")}
+      // onPress={() => props.navigation.navigate("Search or Post")}
       >
         <Text style={styles.titleText}>{bName}</Text>
       </TouchableOpacity>

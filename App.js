@@ -25,6 +25,7 @@ import Listings from "./components/ListingsPages/Listings";
 import { LinearGradient } from "expo-linear-gradient";
 import DetailsPage from "./components/DetailsPage/DetailsPage";
 import ZoomImage from "./components/DetailsPage/ZoomImage";
+import MenuListPage from "./components/MenuListPage";
 
 function HomeScreen({ navigation }) {
   const [firstLoad, setFirstLoad] = React.useState(true);
@@ -36,88 +37,24 @@ function HomeScreen({ navigation }) {
   return (
     <>
       {firstLoad ? (
-        <View
-          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        >
-          <Text style={styles.titleText}>ULET</Text>
+        // <View
+        //   style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+        // >
+        //   <Text style={styles.titleText}>ULET</Text>
 
-          <LinearGradient
-            // Button Linear Gradient
-            colors={["#1ed9a6", "#335799"]}
-            style={styles.subBg}
-            start={{ x: 0, y: 0.5 }}
-            end={{ x: 1, y: 0.9 }}
-          >
-            <Text style={styles.subTitle}>BE INCLUDED</Text>
-          </LinearGradient>
-          {/* <TwoBtn navigation={props.navigation} /> */}
-        </View>
+        //   <LinearGradient
+        //     // Button Linear Gradient
+        //     colors={["#1ed9a6", "#335799"]}
+        //     style={styles.subBg}
+        //     start={{ x: 0, y: 0.5 }}
+        //     end={{ x: 1, y: 0.9 }}
+        //   >
+        //     <Text style={styles.subTitle}>BE INCLUDED</Text>
+        //   </LinearGradient>
+        // </View>
+        <Brand />
       ) : (
-        <View
-          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        >
-          {/* <Button
-            title="Go to Details"
-            onPress={() => navigation.navigate("Details")}
-          /> */}
-          {/* <Button
-            title="Go to Brand Name"
-            onPress={() => navigation.navigate("Brand")}
-          /> */}
-          <Button
-            title="Search or Post"
-            onPress={() => navigation.navigate("Search or Post")}
-          />
-          {/* <Button
-        title="I want to"
-        onPress={() => navigation.navigate("I want to")}
-      />
-
-      <Button
-        title="About Me"
-        onPress={() => navigation.navigate("About Me")}
-      /> */}
-
-          <Button
-            title="My Account"
-            onPress={() => navigation.navigate("My Account")}
-          />
-
-          <Button
-            title="My Preference"
-            onPress={() => navigation.navigate("My Preference")}
-          />
-
-          <Button
-            title="My Listings"
-            onPress={() => navigation.navigate("My Listings")}
-          />
-
-          <Button
-            title="Listings Result"
-            onPress={() => navigation.navigate("Listing Result")}
-          />
-
-          <Button
-            title="Show Carousel"
-            onPress={() => navigation.navigate("Show Carousel")}
-          />
-
-          <Button
-            title="Show Zoom Image"
-            onPress={() => navigation.navigate("Show zoom Image")}
-          />
-
-          <Button title="Login" onPress={() => navigation.navigate("Login")} />
-          <Button
-            title="Login 2"
-            onPress={() => navigation.navigate("Login 2")}
-          />
-          <Button
-            title="Sign Up"
-            onPress={() => navigation.navigate("SignUp")}
-          />
-        </View>
+        <MenuListPage navigation={navigation} />
       )}
     </>
   );
