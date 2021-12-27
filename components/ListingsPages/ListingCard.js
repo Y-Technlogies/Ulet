@@ -15,9 +15,9 @@ const onPress = () => {
 };
 
 const boxItems = [
-  { icon: "", qty: 2, bWidth: 0 },
-  { icon: "", qty: 6, bWidth: 1 },
-  { icon: "", qty: 4, bWidth: 0 },
+  { icon: require("../../assets/images/car.png"), qty: 2, bWidth: 0 },
+  { icon: require("../../assets/images/bed.png"), qty: 6, bWidth: 1 },
+  { icon: require("../../assets/images/bathtub.png"), qty: 4, bWidth: 0 },
 ];
 
 const ListingCard = (props) => {
@@ -68,7 +68,7 @@ const ListingCard = (props) => {
           paddingRight: 80,
         }}
       >
-        <Text style={{ color: "green", fontSize: 16 }}>$1400/months</Text>
+        <Text style={{ color: "#1ed9a6", fontSize: 16 }}>$1400/months</Text>
         <Text style={{ color: "black", fontSize: 13 }}>Jhon Melton</Text>
       </View>
 
@@ -100,12 +100,10 @@ const ListingCard = (props) => {
                 padding: 6,
               }}
             >
-              <Avatar
-                size={15}
-                title="BP"
-                source={require("../../assets/images/car.png")}
-              />
-              <Text style={{ textAlign: "center" }}>{item.qty}</Text>
+              <Avatar size={15} title="BP" source={item.icon} />
+              <Text style={{ textAlign: "center", color: "#1ed9a6" }}>
+                {item.qty}
+              </Text>
             </View>
           </View>
         ))}

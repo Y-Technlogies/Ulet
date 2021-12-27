@@ -33,7 +33,9 @@ export class MenuItems extends Component {
                 resizeMode: "contain",
               }}
             />
-            <Text style={{ fontSize: 13, fontWeight: "bold" }}>
+            <Text
+              style={{ fontSize: 13, fontWeight: "bold", color: "#1ed9a6" }}
+            >
               {item.title}
             </Text>
           </View>

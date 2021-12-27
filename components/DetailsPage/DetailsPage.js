@@ -32,10 +32,10 @@ export default function DetailsPage(props) {
               <Ionicons
                 name="location"
                 size={15}
-                color="#2874A6"
+                color="#1ed9a6"
                 style={{ marginRight: 8 }}
               />
-              <Text style={{ color: "#2874A6" }}>
+              <Text style={{ color: "#1ed9a6" }}>
                 There is a address/ location
               </Text>
             </View>
@@ -54,7 +54,9 @@ export default function DetailsPage(props) {
             </View>
             <View>
               <View style={styles.flexRow}>
-                <Text style={{ fontWeight: "bold" }}>Owner Name</Text>
+                <Text style={{ fontWeight: "bold", color: "#1ed9a6" }}>
+                  Owner Name
+                </Text>
                 <Text style={{ fontSize: 10, marginLeft: 10 }}>(45 ads)</Text>
               </View>
               <Text style={{ fontSize: 10 }}>Member since November 2021</Text>
@@ -92,6 +94,7 @@ const styles = StyleSheet.create({
   titleStyle: {
     fontSize: 20,
     fontWeight: "700",
+    color: "#1ed9a6",
   },
   priceBox: {
     display: "flex",

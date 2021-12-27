@@ -35,28 +35,8 @@ function HomeScreen({ navigation }) {
     }, 3000);
   }, []);
   return (
-    <>
-      {firstLoad ? (
-        // <View
-        //   style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        // >
-        //   <Text style={styles.titleText}>ULET</Text>
-
-        //   <LinearGradient
-        //     // Button Linear Gradient
-        //     colors={["#1ed9a6", "#335799"]}
-        //     style={styles.subBg}
-        //     start={{ x: 0, y: 0.5 }}
-        //     end={{ x: 1, y: 0.9 }}
-        //   >
-        //     <Text style={styles.subTitle}>BE INCLUDED</Text>
-        //   </LinearGradient>
-        // </View>
-        <Brand />
-      ) : (
-        <MenuListPage navigation={navigation} />
-      )}
-    </>
+    <>{firstLoad ? <Brand /> : <Listings navigation={navigation} />}</>
+    // <>{firstLoad ? <Brand /> : <MenuListPage navigation={navigation} />}</>
   );
 }
 
